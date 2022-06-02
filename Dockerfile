@@ -1,19 +1,18 @@
 FROM python:3.9-alpine3.13
-LABEL mainainer="azar08aj"
+LABEL maintainer="londonappdeveloper.com"
 
+ENV PYTHONUNBUFFERED 1
 
-ENV PYTHONBUFFERED 1
-
-COPY ./Requirements.txt /tmp/Requirements.txt
+COPY ./requirements.txt /tmp/requirements.txt
 COPY ./app /app
-WORKDIR /app
+WORKDIR D:/FullStack/Django/RecipeApi/app
 EXPOSE 8000
 
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
-    /py/bin/pip install -r /tmp/Requirements.txt &&\
+    /py/bin/pip install -r /tmp/requirements.txt && \
     rm -rf /tmp && \
-    adduser \ 
+    adduser \
         --disabled-password \
         --no-create-home \
         django-user
