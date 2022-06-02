@@ -7,6 +7,7 @@ COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./app /app
 WORKDIR D:/FullStack/Django/RecipeApi/app
+#RUN chmod -R 777 D:/FullStack/Django/RecipeApi
 EXPOSE 8000
 
 ARG Dev=false
